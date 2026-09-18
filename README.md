@@ -1,118 +1,118 @@
 # TP Git — tpgit
 
-Rapport de travaux pratiques : prise en main de Git et GitHub (versioning, branches, fusions, gestion de conflits et travail collaboratif).
+Report on a hands-on Git and GitHub exercise (versioning, branches, merges, conflict resolution, and collaborative work).
 
 ## Description
 
-Ce projet est un dépôt d'exercice (`tpgit`) créé dans le cadre du TP "Introduction to the GIT" (UM6P). Il sert de terrain d'entraînement pour manipuler Git de bout en bout : initialisation d'un dépôt, gestion de fichiers de listes (`fruits.txt`, `vegetables.txt`, `sauces.txt`, `spices.txt`, `herbs.txt`), création et fusion de branches, résolution de conflits (y compris un conflit d'encodage), connexion à un dépôt distant sur GitHub, et enfin travail collaboratif à plusieurs.
+This project is a practice repository (`tpgit`) created as part of the "Introduction to the GIT" lab (UM6P). It served as a training ground for handling Git end to end: initializing a repository, managing simple list files (`fruits.txt`, `vegetables.txt`, `sauces.txt`, `spices.txt`, `herbs.txt`), creating and merging branches, resolving conflicts (including an encoding-related one), connecting to a remote repository on GitHub, and finally working collaboratively as a team.
 
-Dépôt GitHub : [github.com/momo226-code/tpgit-](https://github.com/momo226-code/tpgit-)
+GitHub repository: [github.com/momo226-code/tpgit-](https://github.com/momo226-code/tpgit-)
 
-## Auteurs
+## Authors
 
 - **Mohamed Idriss NANA**
 - **Taha Thiam**
 
-## Objectifs
+## Objectives
 
-- Apprendre à utiliser un logiciel de gestion de versions (Git).
-- Maîtriser le versioning d'un projet logiciel.
-- Partager un projet et travailler en équipe via GitHub.
+- Learn how to use a version control system (Git).
+- Master versioning of a software project.
+- Share a project and work as a team via GitHub.
 
 ---
 
-## 1. Installation et configuration de Git
+## 1. Installing and Configuring Git
 
-Avant toute chose, Git a été installé depuis [git-scm.com](https://git-scm.com/downloads), puis vérifié avec :
+Git was first installed from [git-scm.com](https://git-scm.com/downloads), then verified with:
 
 ```powershell
 git --version
 ```
 
-L'identité Git (nom + email) a ensuite été configurée, car Git l'attache à chaque commit :
+Git identity (name + email) was then configured, since Git attaches it to every commit:
 
 ```powershell
-git config --global user.name "Votre Nom"
-git config --global user.email "votre.email@exemple.com"
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
 ```
 
-## 2. Initialisation du dépôt local
+## 2. Initializing the Local Repository
 
-Un dossier `tpgit` a été créé et transformé en dépôt Git avec `git init`. Un premier fichier `fruits.txt` a été créé, puis suivi via le cycle classique **status → add → commit → status → log**.
+A `tpgit` folder was created and turned into a Git repository with `git init`. A first file, `fruits.txt`, was created and then tracked using the classic cycle **status → add → commit → status → log**.
 
-![Premier commit sur fruits.txt](screenshots/01-premier-commit-apple.png)
-*Premier commit : ajout de "Apple" dans `fruits.txt`, avec vérification du statut avant/après.*
+![First commit on fruits.txt](screenshots/01-premier-commit-apple.png)
+*First commit: adding "Apple" to `fruits.txt`, with status checked before and after.*
 
-![Ajout d'un second fruit](screenshots/02-ajout-orange.png)
-*Ajout de "Orange" : nouveau cycle add → commit.*
+![Adding a second fruit](screenshots/02-ajout-orange.png)
+*Adding "Orange": a new add → commit cycle.*
 
-Trois commits supplémentaires ont suivi le même schéma (Banana, Lemon, Ananas), chacun visible dans l'historique détaillé :
+Three additional commits followed the same pattern (Banana, Lemon, Ananas), each visible in the detailed history:
 
-![Historique détaillé des commits](screenshots/03-git-log-detaille.png)
-*`git log` : chaque commit affiche son hash, son auteur, sa date et son message.*
+![Detailed commit history](screenshots/03-git-log-detaille.png)
+*`git log`: each commit shows its hash, author, date, and message.*
 
 ## 3. Branches
 
-### Branche `vegetables`
+### `vegetables` branch
 
-Une branche `vegetables` a été créée et basculée avec `git branch` / `git checkout`, puis un fichier `vegetables.txt` a été ajouté et alimenté par 3 commits séparés (Tomato, Concomber, Carotte).
+A `vegetables` branch was created and switched to using `git branch` / `git checkout`, then a `vegetables.txt` file was added and built up through 3 separate commits (Tomato, Cucumber, Carrot).
 
-![Création de la branche vegetables](screenshots/04-creation-branche-vegetables.png)
-*Création et bascule sur la branche `vegetables`, confirmée par `git branch`.*
+![Creating the vegetables branch](screenshots/04-creation-branche-vegetables.png)
+*Creating and switching to the `vegetables` branch, confirmed with `git branch`.*
 
-![Historique de la branche vegetables](screenshots/05-log-graph-vegetables.png)
-*`git log --graph --oneline --decorate --all` : la branche `vegetables` a divergé de `master` après le commit "Ananas".*
+![History of the vegetables branch](screenshots/05-log-graph-vegetables.png)
+*`git log --graph --oneline --decorate --all`: the `vegetables` branch diverged from `master` after the "Ananas" commit.*
 
-### Branche `sauces`
+### `sauces` branch
 
-Même principe pour la branche `sauces`, avec un fichier `sauces.txt` alimenté par les commits "SauceArrachide" et "Djoumblé".
+The same approach was used for the `sauces` branch, with a `sauces.txt` file built up through the "SauceArrachide" and "Djoumblé" commits.
 
-![Branche sauces](screenshots/06-branche-sauces.png)
-*Création de la branche `sauces` et ses deux premiers commits, avec le graphe complet montrant la divergence des branches `sauces` et `vegetables` depuis `master`.*
+![Sauces branch](screenshots/06-branche-sauces.png)
+*Creating the `sauces` branch and its first two commits, with the full graph showing the divergence of the `sauces` and `vegetables` branches from `master`.*
 
-### Branches `spices` et `herbs` (travail à deux)
+### `spices` and `herbs` branches (paired work)
 
-Chaque membre du binôme a travaillé sur sa propre branche (`spices` pour Mohamed Idriss, `herbs` pour Taha), avec ses propres fichiers et commits, avant fusion dans `main`.
+Each member of the pair worked on their own branch (`spices` for Mohamed Idriss, `herbs` for Taha), with their own files and commits, before merging into `main`.
 
-![Historique des branches spices et herbs](screenshots/08-log-detaille-herbs-spices.png)
-*`git log` détaillé montrant les commits des deux contributeurs sur leurs branches respectives.*
+![History of the spices and herbs branches](screenshots/08-log-detaille-herbs-spices.png)
+*Detailed `git log` showing each contributor's commits on their respective branches.*
 
-![Visualisation gitk des branches](screenshots/10-gitk-branches-herbs-spices.png)
-*Visualisation graphique (gitk) de l'avancement parallèle des branches `spices` et `herbs` avant leur fusion dans `main`.*
+![gitk visualization of the branches](screenshots/10-gitk-branches-herbs-spices.png)
+*Graphical visualization (gitk) of the parallel progress on the `spices` and `herbs` branches before they were merged into `main`.*
 
-## 4. Fusions (merges)
+## 4. Merges
 
-Une fois le travail terminé sur chaque branche, les fusions ont été effectuées vers `master`/`main`, en suivant le principe : **on se place sur la branche destination, puis on `merge` la branche source**.
+Once work was finished on each branch, merges were performed into `master`/`main`, following the principle: **check out the destination branch, then `merge` the source branch into it**.
 
 ```powershell
 git checkout main
 git pull
-git merge <branche>
+git merge <branch>
 git push origin main
 ```
 
-![Fusion réussie et historique final](screenshots/09-historique-complet-final.png)
-*Graphe final montrant les branches `vegetables` et `sauces` fusionnées dans `main` via un commit de fusion.*
+![Successful merge and final history](screenshots/09-historique-complet-final.png)
+*Final graph showing the `vegetables` and `sauces` branches merged into `main` via a merge commit.*
 
-## 5. Résolution de conflits
+## 5. Conflict Resolution
 
-Deux types de conflits ont été rencontrés et résolus au cours du TP.
+Two kinds of conflicts came up during the lab and were resolved.
 
-### a) Conflit de contenu classique (`vegetables.txt`)
+### a) A classic content conflict (`vegetables.txt`)
 
-En supprimant "Carotte" localement pendant qu'une autre modification existait côté distant, un conflit est apparu au moment du `git pull` :
+After deleting "Carotte" locally while a different change existed on the remote, a conflict appeared when running `git pull`:
 
-![Conflit sur vegetables.txt](screenshots/14-conflit-vegetables.png)
-*`CONFLICT (content): Merge conflict in vegetables.txt` après un `git pull`.*
+![Conflict on vegetables.txt](screenshots/14-conflit-vegetables.png)
+*`CONFLICT (content): Merge conflict in vegetables.txt` after a `git pull`.*
 
-### b) Conflit lié à l'encodage (`sauces.txt`)
+### b) An encoding-related conflict (`sauces.txt`)
 
-Un cas plus particulier est survenu sur `sauces.txt` : Git indiquait `Cannot merge binary files`, alors qu'il s'agissait bien d'un fichier texte. La cause identifiée était l'**encodage UTF-16** (avec BOM) généré par défaut par PowerShell lors de l'écriture avec `echo >>`, que Git interprète comme du binaire et ne sait pas fusionner ligne à ligne.
+A more unusual case came up with `sauces.txt`: Git reported `Cannot merge binary files`, even though it was really a text file. The root cause was **UTF-16 encoding** (with a BOM), generated by default by PowerShell when writing with `echo >>`, which Git interprets as binary and cannot merge line by line.
 
-![Conflit et divergence sur sauces.txt](screenshots/17-conflit-sauces-diverge.png)
-*Tentative de `git pull` provoquant un conflit binaire, suivie d'un `git merge --abort` (annulation propre de la tentative, sans résoudre le problème de fond) et confirmation de la divergence des branches (`git status`).*
+![Conflict and divergence on sauces.txt](screenshots/17-conflit-sauces-diverge.png)
+*A `git pull` attempt triggering a binary-file conflict, followed by `git merge --abort` (cleanly cancelling the attempt, without fixing the underlying issue) and confirmation of the branch divergence (`git status`).*
 
-**Solution appliquée** : réécriture manuelle et complète du fichier en UTF-8, puis résolution explicite du conflit :
+**Solution applied**: the file was manually rewritten from scratch in UTF-8, then the conflict was explicitly resolved:
 
 ```powershell
 Remove-Item sauces.txt
@@ -125,67 +125,67 @@ git commit -m "Resolve conflict in sauces.txt and fix encoding to UTF-8"
 git pull
 ```
 
-![Résolution finale du conflit d'encodage](screenshots/18-resolution-finale-encodage.png)
-*Réécriture du fichier en UTF-8, `git add` + `git commit` pour clore le conflit, puis `git pull` confirmant que tout est synchronisé (`Already up to date`).*
+![Final resolution of the encoding conflict](screenshots/18-resolution-finale-encodage.png)
+*Rewriting the file in UTF-8, `git add` + `git commit` to close the conflict, then `git pull` confirming everything is in sync (`Already up to date`).*
 
-> **Point clé retenu** : réécrire un fichier proprement sur le disque ne suffit pas — tant que `git add` n'est pas fait, Git considère toujours le conflit comme non résolu.
+> **Key takeaway**: cleanly rewriting a file on disk isn't enough — until `git add` is run, Git still considers the conflict unresolved.
 
-## 6. Gestion des fichiers (ajouts / suppressions)
+## 6. Managing Files (Adding / Removing Items)
 
-Plusieurs opérations classiques ont été pratiquées sur `fruits.txt` : ajout de nouveaux éléments (Grenadille, Fraise, Papaye) et suppression ciblée d'une ligne précise sans éditeur, directement en PowerShell.
+Several standard operations were practiced on `fruits.txt`: adding new items (Grenadille, Fraise, Papaye) and removing a specific line without an editor, directly from PowerShell.
 
-![Suppression d'un élément dans une liste](screenshots/11-suppression-fruit.png)
-*Suppression de "Banana" puis de "Ananas" avec `Where-Object { $_ -ne "..." }`, sans passer par un éditeur de texte.*
+![Removing an item from a list](screenshots/11-suppression-fruit.png)
+*Removing "Banana" and then "Ananas" using `Where-Object { $_ -ne "..." }`, without opening a text editor.*
 
-![Ajout de nouveaux fruits](screenshots/12-ajout-grenadille.png)
-*Ajout de "Grenadille" à la liste, suivi d'un commit dédié.*
+![Adding new fruits](screenshots/12-ajout-grenadille.png)
+*Adding "Grenadille" to the list, followed by a dedicated commit.*
 
-## 7. Dépôt distant (GitHub)
+## 7. Remote Repository (GitHub)
 
-Le dépôt local a été relié à un dépôt distant créé sur GitHub, puis synchronisé via `push`/`pull` :
+The local repository was linked to a remote repository created on GitHub, then synced via `push`/`pull`:
 
 ```powershell
 git remote add origin https://github.com/momo226-code/tpgit-.git
 git push -u origin main
 ```
 
-![Push vers GitHub](screenshots/13-push-github.png)
-*Envoi des commits locaux vers le dépôt distant `tpgit-` sur GitHub.*
+![Push to GitHub](screenshots/13-push-github.png)
+*Sending local commits to the remote `tpgit-` repository on GitHub.*
 
-![Page du dépôt sur GitHub](screenshots/19-page-github-repository.png)
-*Le dépôt `tpgit` visible en ligne sur GitHub, avec son historique de commits.*
+![GitHub repository page](screenshots/19-page-github-repository.png)
+*The `tpgit` repository visible online on GitHub, with its commit history.*
 
-Une vérification finale des branches locales et distantes a permis de confirmer que `main` était bien la branche par défaut, entièrement synchronisée :
+A final check of the local and remote branches confirmed that `main` was indeed the default branch and fully synced:
 
-![Vérification des branches locales et distantes](screenshots/20-verification-branches-locales.png)
-*`git branch` : branches locales `main`, `sauces`, `spices`, `vegetables`, avec `origin/main` comme référence distante.*
+![Checking local and remote branches](screenshots/20-verification-branches-locales.png)
+*`git branch`: local branches `main`, `sauces`, `spices`, `vegetables`, with `origin/main` as the remote reference.*
 
-## 8. Travail collaboratif
+## 8. Collaborative Work
 
-Les deux membres du binôme (Mohamed Idriss NANA et Taha Thiam) ont été ajoutés comme collaborateurs sur le dépôt GitHub (Settings → Collaborators → Add people), permettant à chacun de push directement sur le projet partagé.
+Both members of the pair (Mohamed Idriss NANA and Taha Thiam) were added as collaborators on the GitHub repository (Settings → Collaborators → Add people), allowing each of them to push directly to the shared project.
 
-![Historique avec les deux contributeurs](screenshots/16-gitk-auteurs-main.png)
-*Visualisation gitk de la branche `main` montrant les commits des deux auteurs, avec horodatage et identifiants respectifs.*
+![History with both contributors](screenshots/16-gitk-auteurs-main.png)
+*gitk visualization of the `main` branch showing commits from both authors, with timestamps and identities.*
 
-Chaque contributeur a travaillé sur sa propre branche, avant de fusionner son travail dans `main` — reproduisant un flux de travail d'équipe réaliste : isolement du travail en cours, puis intégration une fois celui-ci finalisé et testé.
+Each contributor worked on their own branch before merging their work into `main` — mirroring a realistic team workflow: isolating work in progress, then integrating it once it's finished and tested.
 
 ---
 
-## Difficultés rencontrées
+## Issues Encountered
 
-| Problème | Cause | Solution |
+| Problem | Cause | Solution |
 |---|---|---|
-| `fatal: unable to auto-detect email address` | Identité Git non configurée | `git config --global user.name/user.email` |
-| `cannot do a partial commit during a merge` | Tentative de commit d'un seul fichier pendant un merge en cours | `git add .` (tout stager) avant de commit |
-| `Cannot merge binary files: sauces.txt` | Fichier écrit en UTF-16 (via `echo >>` sous PowerShell), interprété comme binaire par Git | Réécriture du fichier en UTF-8 avec `Set-Content -Encoding utf8` |
-| Conflit répété après `git merge --abort` | `--abort` annule la tentative de fusion, mais ne règle jamais le désaccord de fond | Refaire le `pull`/`merge` et résoudre réellement le conflit (édition + `add` + `commit`) |
+| `fatal: unable to auto-detect email address` | Git identity not configured | `git config --global user.name/user.email` |
+| `cannot do a partial commit during a merge` | Trying to commit a single file while a merge was in progress | `git add .` (stage everything) before committing |
+| `Cannot merge binary files: sauces.txt` | File written in UTF-16 (via `echo >>` in PowerShell), interpreted as binary by Git | Rewriting the file in UTF-8 with `Set-Content -Encoding utf8` |
+| Conflict reappearing after `git merge --abort` | `--abort` cancels the merge attempt but never resolves the underlying disagreement | Redo the `pull`/`merge` and actually resolve the conflict (edit + `add` + `commit`) |
 
 ## Conclusion
 
-Ce TP a permis de manipuler concrètement l'ensemble du cycle de vie Git : du suivi local d'un simple fichier texte jusqu'à la collaboration à plusieurs sur un dépôt distant, en passant par la création de branches, la fusion et la résolution de conflits — y compris un conflit inhabituel lié à l'encodage des fichiers sous Windows/PowerShell. Ces manipulations reproduisent fidèlement le flux de travail utilisé au quotidien dans un projet de développement réel en équipe.
+This lab made it possible to work hands-on through the full Git lifecycle: from locally tracking a simple text file to collaborating with a partner on a remote repository, including branch creation, merging, and conflict resolution — even an unusual conflict caused by file encoding on Windows/PowerShell. These exercises closely mirror the workflow used day to day on a real team development project.
 
-## Ressources
+## Resources
 
-- [Documentation officielle Git](https://git-scm.com/book/en/v2)
+- [Official Git Documentation](https://git-scm.com/book/en/v2)
 - [Learn Git Branching](https://learngitbranching.js.org/)
 - [Try GitHub](https://try.github.io/)
