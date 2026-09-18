@@ -148,13 +148,6 @@ git push -u origin main
 *Sending local commits to the remote `tpgit-` repository on GitHub.*
 
 
-## 8. Collaborative Work
-![History with both contributors](screenshots/16-gitk-auteurs-main.png)
-*gitk visualization of the `main` branch showing commits from both authors, with timestamps and identities.*
-Each contributor worked on their own branch before merging their work into `main` — mirroring a realistic team workflow: isolating work in progress, then integrating it once it's finished and tested.
-
----
-
 ## Issues Encountered
 
 | Problem | Cause | Solution |
