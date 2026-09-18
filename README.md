@@ -1,7 +1,7 @@
 # TP Git
 ## Description
 
-This project (tpgit) is a practice repository we made for our "Software Engineering" course. It helped us get familiar with Git: creating a repository, managing simple text files (fruits.txt, vegetables.txt, sauces.txt, spices.txt, herbs.txt), making and merging branches, fixing conflicts (including one caused by file encoding), connecting to GitHub, and working together as a team.
+This project is a practice repository we made for our "Software Engineering" course. It helped us get familiar with Git: creating a repository, managing simple text files (fruits.txt, vegetables.txt, sauces.txt, spices.txt, herbs.txt), making and merging branches, fixing conflicts (including one caused by file encoding), connecting to GitHub, and working together as a team.
 
 GitHub repository: [github.com/momo226-code/tpgit-](https://github.com/momo226-code/tpgit-)
 
