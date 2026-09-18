@@ -104,7 +104,7 @@ After deleting "Carotte" locally while a different change existed on the remote,
 
 ### b) An encoding-related conflict (`sauces.txt`)
 
-A strange problem happened with sauces.txt. Git said Cannot merge binary files, even though the file was just plain text. The real reason was the file's encoding and the way the text was saved. PowerShell had saved it using UTF-16 (with a hidden marker called a BOM) instead of the more common UTF-8. Git looked at this and thought the file was a binary file so it couldn't merge it line by line like it normally does with text files.
+A strange problem happened with sauces.txt. Git said cannot merge binary files, even though the file was just plain text. The real reason was the file's encoding and the way the text was saved. PowerShell had saved it using UTF-16 (with a hidden marker called a BOM) instead of the more common UTF-8. Git looked at this and thought the file was a binary file so it couldn't merge it line by line like it normally does with text files.
 
 ![Conflict and divergence on sauces.txt](screenshots/17-conflit-sauces-diverge.png)
 *A `git pull` attempt triggering a binary-file conflict, followed by `git merge --abort` (cleanly cancelling the attempt, without fixing the underlying issue) and confirmation of the branch divergence (`git status`).*
