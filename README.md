@@ -147,13 +147,6 @@ git push -u origin main
 ![Push to GitHub](screenshots/13-push-github.png)
 *Sending local commits to the remote `tpgit-` repository on GitHub.*
 
-![GitHub repository page](screenshots/19-page-github-repository.png)
-*The `tpgit` repository visible online on GitHub, with its commit history.*
-
-A final check of the local and remote branches confirmed that `main` was indeed the default branch and fully synced:
-
-![Checking local and remote branches](screenshots/20-verification-branches-locales.png)
-*`git branch`: local branches `main`, `sauces`, `spices`, `vegetables`, with `origin/main` as the remote reference.*
 
 ## 8. Collaborative Work
 ![History with both contributors](screenshots/16-gitk-auteurs-main.png)
