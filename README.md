@@ -125,8 +125,6 @@ git pull
 ![Final resolution of the encoding conflict](screenshots/18-resolution-finale-encodage.png)
 *Rewriting the file in UTF-8, `git add` + `git commit` to close the conflict, then `git pull` confirming everything is in sync (`Already up to date`).*
 
-> **Key takeaway**: cleanly rewriting a file on disk isn't enough — until `git add` is run, Git still considers the conflict unresolved.
-
 ## 6. Managing Files (Adding / Removing Items)
 
 Several standard operations were practiced on `fruits.txt`: adding new items (Grenadille, Fraise, Papaye) and removing a specific line without an editor, directly from PowerShell.
