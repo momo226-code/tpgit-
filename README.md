@@ -1,10 +1,10 @@
-# TP Git — tpgit
+# TP Git
 
 Report on a hands-on Git and GitHub exercise (versioning, branches, merges, conflict resolution, and collaborative work).
 
 ## Description
 
-This project is a practice repository (`tpgit`) created as part of our course "Software Engineering". It was a way to be familiar with GIT: initializing a repository, managing simple list files (`fruits.txt`, `vegetables.txt`, `sauces.txt`, `spices.txt`, `herbs.txt`), creating and merging branches, resolving conflicts (including an encoding-related one), connecting to a remote repository on GitHub, and finally working collaboratively as a team.
+This project (tpgit) is a practice repository we made for our "Software Engineering" course. It helped us get familiar with Git: creating a repository, managing simple text files (fruits.txt, vegetables.txt, sauces.txt, spices.txt, herbs.txt), making and merging branches, fixing conflicts (including one caused by file encoding), connecting to GitHub, and working together as a team.
 
 GitHub repository: [github.com/momo226-code/tpgit-](https://github.com/momo226-code/tpgit-)
 
